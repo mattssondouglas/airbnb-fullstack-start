@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Profile</title>
+    <link rel="stylesheet" href="./styles/bootstrap.css" />
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <script
+      src="https://kit.fontawesome.com/af3685eef2.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <nav class="topBanner">
+      <div class="container my-2">
+        <div class="row">
+          <div class="col">
+            <img src="./images/logo-airbnb.png" alt="Airbnb" />
+          </div>
+          <div class="col">
+            <div class="row text-end">
+              <div class="col text-end">
+                <button type="button" class="btn btn-outline-secondary">
+                  <img
+                    src="https://randomuser.me/api/portraits/men/11.jpg"
+                    class="rounded-circle avatarimg"
+                    alt="avatar login"
+                  />
+                  <span>Douglas</span>
+                </button>
+                <button type="button" class="btn btn-outline-secondary">
+                  Log out
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-3">
+      <div class="row">
+        <div class="col-3">
+          <div>
+            <h1>Profile</h1>
+            <div
+              class="h4 pb-2 mb-4 text-danger border-bottom border-secondary"
+            ></div>
+          </div>
+          <form>
+            <small>Name</small>
+            <input
+              class="form-control mb-2"
+              type="text"
+              aria-label="default input example"
+            />
+            <small>Email</small>
+            <label
+              for="exampleFormControlInput1"
+              class="form-label mb-2"
+            ></label>
+            <input type="email" class="form-control mb-2" />
+            <small>Profile Picture</small>
+            <img
+              src="https://randomuser.me/api/portraits/men/11.jpg"
+              alt=""
+              class="rounded-circle reviewavatar d-block mt-1 mb-2"
+            />
+            <input
+              class="form-control mb-2"
+              type="text"
+              aria-label="default input example"
+            />
+            <button class="btn btn-success">Save Changes</button>
+          </form>
+        </div>
+        <div class="col-9">
+          <h1>My Listings</h1>
+          <div
+            class="h4 pb-2 mb-4 text-danger border-bottom border-secondary"
+          ></div>
+          <button type="button" class="btn btn-success">List a House</button>
+          <div class="">
+            <div class="alert alert-light" role="alert">
+              You don't have any listings.
+            </div>
+            <!-- <div class="row row-cols-1">
+              <div class="col p-2">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="row row-cols-2">
+                      <div class="col-4">
+                        <img
+                          class="img-fluid"
+                          src="https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_01.png
+
+"
+                          alt="listing photo 1"
+                        />
+                      </div>
+                      <div class="col-8">
+                        <h1>Luxury Villa in Chaweng</h1>
+                        <span
+                          ><i class="fa-solid fa-map-location"></i> Koh Samui
+                          <i class="fa-regular fa-circle-dot"></i> 4 Rooms</span
+                        >
+                        <div class="row">
+                          <div class="col-1 text-end">
+                            <img
+                              src="https://randomuser.me/api/portraits/men/11.jpg"
+                              class="rounded-circle avatarimg"
+                              alt="avatardescr"
+                            />
+                          </div>
+                          <div class="col-11">
+                            <small>Hosted by Douglas</small>
+                          </div>
+                        </div>
+                        <p>
+                          Stylish, tropical, luxurious, airy and absolute
+                          stunning view over the bay of Chaweng Beach, this
+                          villa combines form and function, enjoying
+                          magnificient views of Samui's small islands and the
+                          sea beyond. With 520sqm of indoor/outdoorliving space
+                          with 7 ensuite bedrooms, large living area, infinity
+                          pool, garden, air conditioned gym, professional pool
+                          table, BBQ and Sala, this villa is perfect for up to
+                          14 adults with 260sqm (2798sqfeet) of living space and
+                          260sqm of outdoor space.
+                        </p>
+                        <div class="col">
+                          <button
+                            type="button"
+                            class="btn btn-outline-secondary"
+                          >
+                            Edit
+                          </button>
+                          <button type="button" class="btn btn-outline-success">
+                            View
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col p-2">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="row row-cols-2">
+                      <div class="col-4">
+                        <img
+                          class="img-fluid"
+                          src="https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_01.png
+
+"
+                          alt="listing photo 1"
+                        />
+                      </div>
+                      <div class="col-8">
+                        <h1>Luxury Villa in Chaweng</h1>
+                        <span
+                          ><i class="fa-solid fa-map-location"></i> Koh Samui
+                          <i class="fa-regular fa-circle-dot"></i> 4 Rooms</span
+                        >
+                        <div class="row">
+                          <div class="col-1 text-end">
+                            <img
+                              src="https://randomuser.me/api/portraits/men/11.jpg"
+                              class="rounded-circle avatarimg"
+                              alt="avatardescr"
+                            />
+                          </div>
+                          <div class="col-11">
+                            <small>Hosted by Douglas</small>
+                          </div>
+                        </div>
+                        <p>
+                          Stylish, tropical, luxurious, airy and absolute
+                          stunning view over the bay of Chaweng Beach, this
+                          villa combines form and function, enjoying
+                          magnificient views of Samui's small islands and the
+                          sea beyond. With 520sqm of indoor/outdoorliving space
+                          with 7 ensuite bedrooms, large living area, infinity
+                          pool, garden, air conditioned gym, professional pool
+                          table, BBQ and Sala, this villa is perfect for up to
+                          14 adults with 260sqm (2798sqfeet) of living space and
+                          260sqm of outdoor space.
+                        </p>
+                        <div class="col">
+                          <button
+                            type="button"
+                            class="btn btn-outline-secondary"
+                          >
+                            Edit
+                          </button>
+                          <button type="button" class="btn btn-outline-success">
+                            View
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
