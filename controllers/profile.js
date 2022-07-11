@@ -5,7 +5,7 @@ const router = express.Router()
 //Requests
 // GET /
 router.get('/', async (req, res, next) => {
-  res.send('Hello from Profile')
+  res.render('./profile')
 })
 // PATCH /
 router.patch('/', async (req, res, next) => {})
