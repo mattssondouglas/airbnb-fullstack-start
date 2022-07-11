@@ -1,0 +1,43 @@
+nav img {
+  height: 40px;
+}
+
+h5 a {
+  text-decoration: none;
+  color: black;
+}
+
+.houseBigImageLeft {
+  width: 100%;
+}
+
+.loginBody {
+  background-image: url('https://res.cloudinary.com/dsko6ntfj/image/upload/v1642399115/portal/web%20development%20beginners/05%20Project%20Airbnb/assets/thailand.jpg');
+  height: 100vh;
+  width: 100vw;
+  background-size: cover;
+  background-position: center;
+}
+
+.centerbox {
+  width: 400px;
+}
+
+.avatarimg {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+}
+
+.avatardescr {
+  height: 20px;
+  width: 20px;
+}
+
+.reviewsubmit {
+  width: 88px;
+}
+
+.reviewavatar {
+  height: 60px;
+}
