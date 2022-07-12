@@ -23,20 +23,22 @@ router.post('/signup', async (req, res, next) => {
   try {
     console.log(req.body)
     let user = await Users.create(req.body)
-    // let foundUser = await Users.findOne({
-    //   email: req.body.email
-    // })
+    let foundUser = await Users.findOne({
+      email: req.body.email
+    })
+    if (foundUser) {
+      throw new Error('User with this email already exists')
+    }
     req.login(user, err => {
       if (err) {
         console.log(err)
         throw err
       } else {
-        console.log('OK!!!')
+        // console.log('OK!!!')
         res.redirect('/houses')
       }
-      // email: req.body.email
-      // password: req.body.password
     })
+    // ENCRYPT PASSWORD IN THIS POST ROUTE LATER
   } catch (err) {
     next(err)
   }
