@@ -8,23 +8,34 @@
 			</div>
 			<div class="col">
 				<div class="row text-end">
+					{{#if user}}
 					<div class="col text-end">
 						<a href="/profile">
 						<button type="button" class="btn btn-outline-secondary">
 							<img
-								src="https://randomuser.me/api/portraits/men/11.jpg"
+								src="{{user.avatar}}"
 								class="rounded-circle avatarimg"
 								alt="avatar login"
 							/>
-							<span>Douglas</span>
+							<!-- https://randomuser.me/api/portraits/men/11.jpg -->
+							<span>{{user.name}}</span>
 						</button>
 					</a>
-					<a href="/houses">
+					<a href="/auth/logout">
 						<button type="button" class="btn btn-outline-secondary">
 							Log out
 						</button>
 						</a>
 					</div>
+					{{else}}
+					<div class="col text-end">
+					<a href="/auth/logout">
+						<button type="button" class="btn btn-outline-secondary">
+							Log out
+						</button>
+						</a>
+					</div>
+					{{/if}}
 				</div>
 			</div>
 		</div>

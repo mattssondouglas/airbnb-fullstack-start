@@ -6,11 +6,11 @@ const Users = require('../models/users')
 //Requests
 //BASE ROUTE
 router.get('/', async (req, res, next) => {
-  res.send('Hello from Auth')
+  res.send('Hello from Auth', { user: req.user })
 })
 // LOGIN GET
 router.get('/login', async (req, res, next) => {
-  res.render('login')
+  res.render('login', { user: req.user })
 })
 // LOGIN POST
 router.post('/login', async (req, res, next) => {
@@ -37,7 +37,7 @@ router.post('/login', async (req, res, next) => {
 })
 // SIGNUP GET
 router.get('/signup', async (req, res, next) => {
-  res.render('signup')
+  res.render('signup', { user: req.user })
 })
 // SIGNUP POST
 router.post('/signup', async (req, res, next) => {
