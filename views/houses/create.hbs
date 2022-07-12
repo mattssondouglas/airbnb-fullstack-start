@@ -4,16 +4,16 @@
 
     <!-- Start> Form -->
     <div class="container">
-      <form class="" action="index.html" method="post">
+      <form class="" action="/houses" method="POST">
         <h5>List a house</h5>
         <label class="form-label">Short Title</label>
-        <input type="text" class="form-control" />
+        <input type="text" class="form-control" name='title'/>
         <label class="form-label">Description</label>
-        <textarea class="form-control" rows="5"></textarea>
+        <textarea class="form-control" rows="5" name='description'></textarea>
         <label class="form-label">Number of Rooms</label>
-        <input type="number" class="form-control" />
+        <input type="number" class="form-control" name='rooms'/>
         <label class="form-label">Location</label>
-        <select class="form-select">
+        <select class="form-select" name='location'>
           <option value="1" selected>Koh Phangan</option>
           <option value="2">Koh Samui</option>
           <option value="3">Bali</option>
@@ -23,18 +23,18 @@
           <span class="input-group-text"
             ><i class="fa-solid fa-dollar-sign"></i
           ></span>
-          <input type="number" class="form-control" />
+          <input type="number" class="form-control" name='price'/>
         </div>
         <label class="form-label">Add Photos (up to 9)</label>
-        <input type="text" class="form-control" placeholder="http://..." />
-        <input type="text" class="form-control" placeholder="http://..." />
-        <input type="text" class="form-control" placeholder="http://..." />
-        <input type="text" class="form-control" placeholder="http://..." />
-        <input type="text" class="form-control" placeholder="http://..." />
-        <input type="text" class="form-control" placeholder="http://..." />
-        <input type="text" class="form-control" placeholder="http://..." />
-        <input type="text" class="form-control" placeholder="http://..." />
-        <input type="text" class="form-control" placeholder="http://..." />
+        <input type="text" class="form-control" placeholder="http://..." name='photo1'/>
+        <input type="text" class="form-control" placeholder="http://..." name='photo2'/>
+        <input type="text" class="form-control" placeholder="http://..." name='photo3'/>
+        <input type="text" class="form-control" placeholder="http://..." name='photo4'/>
+        <input type="text" class="form-control" placeholder="http://..." name='photo5'/>
+        <input type="text" class="form-control" placeholder="http://..." name='photo6'/>
+        <input type="text" class="form-control" placeholder="http://..." name='photo7'/>
+        <input type="text" class="form-control" placeholder="http://..." name='photo8'/>
+        <input type="text" class="form-control" placeholder="http://..." name='photo9'/>
         <button class="btn btn-success mt-2">Submit</button>
       </form>
     </div>
