@@ -1,6 +1,7 @@
 // Import Packages
 const express = require('express')
 const router = express.Router()
+const Users = require('../models/users')
 
 //Requests
 //BASE ROUTE
@@ -18,7 +19,28 @@ router.get('/signup', async (req, res, next) => {
   res.render('signup')
 })
 // SIGNUP POST
-router.post('/signup', async (req, res, next) => {})
+router.post('/signup', async (req, res, next) => {
+  try {
+    console.log(req.body)
+    let user = await Users.create(req.body)
+    // let foundUser = await Users.findOne({
+    //   email: req.body.email
+    // })
+    req.login(user, err => {
+      if (err) {
+        console.log(err)
+        throw err
+      } else {
+        console.log('OK!!!')
+        res.redirect('/houses')
+      }
+      // email: req.body.email
+      // password: req.body.password
+    })
+  } catch (err) {
+    next(err)
+  }
+})
 // LOGOUT GET
 router.get('/logout', async (req, res, next) => {})
 // Export module
