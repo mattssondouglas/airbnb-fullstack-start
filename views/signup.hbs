@@ -4,7 +4,7 @@
         class="centerbox box text-center position-absolute top-50 start-50 translate-middle bg-light p-3"
       >
         <img class="my-2" src="/images/logo-airbnb.png" alt="Airbnb" />
-        <form class="text-start">
+        <form class="text-start" action='/auth/signup' method='POST'>
           <label for="exampleInputEmail1" class="form-label"
             >Your full name</label
           >
@@ -12,11 +12,11 @@
           <label for="exampleInputEmail1" class="form-label"
             >Profile picture</label
           >
-          <input type="text" placeholder="http://..." class="form-control" />
+          <input type="text" placeholder="http://..." class="form-control"/>
           <label for="exampleInputEmail1" class="form-label">Email</label>
-          <input type="email" class="form-control" />
+          <input type="email" class="form-control" name='email'/>
           <label for="exampleInputPassword1" class="form-label">Password</label>
-          <input type="password" class="form-control" />
+          <input type="password" class="form-control" name='password'/>
 
           <button class="btn btn-success mt-2 d-block">
             Sign Up
