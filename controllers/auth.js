@@ -13,7 +13,28 @@ router.get('/login', async (req, res, next) => {
   res.render('login')
 })
 // LOGIN POST
-router.post('/login', async (req, res, next) => {})
+router.post('/login', async (req, res, next) => {
+  try {
+    let foundUser = await Users.findOne({
+      email: req.body.email,
+      password: req.body.password
+    })
+
+    if (foundUser) {
+      req.login(foundUser, err => {
+        if (err) {
+          throw err
+        } else {
+          res.redirect('/houses')
+        }
+      })
+    } else {
+      throw new Error('User or password does not exist')
+    }
+  } catch (err) {
+    next(err)
+  }
+})
 // SIGNUP GET
 router.get('/signup', async (req, res, next) => {
   res.render('signup')
