@@ -7,6 +7,11 @@ router.get('/', async (req, res, next) => {
   res.send('Hello from Reviews')
 })
 // POST /
-router.post('/', async (req, res, next) => {})
+router.post('/', async (req, res, next) => {
+  if (req.isAuthenticated()) {
+  } else {
+    res.redirect('/auth/login')
+  }
+})
 // Export module
 module.exports = router

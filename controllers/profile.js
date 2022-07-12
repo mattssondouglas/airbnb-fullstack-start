@@ -5,9 +5,18 @@ const router = express.Router()
 //Requests
 // GET /
 router.get('/', async (req, res, next) => {
-  res.render('./profile')
+  if (req.isAuthenticated()) {
+    res.render('./profile')
+  } else {
+    res.redirect('/auth/login')
+  }
 })
 // PATCH /
-router.patch('/', async (req, res, next) => {})
+router.patch('/', async (req, res, next) => {
+  if (req.isAuthenticated()) {
+  } else {
+    res.redirect('/auth/login')
+  }
+})
 // Export module
 module.exports = router
