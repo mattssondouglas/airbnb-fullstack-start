@@ -6,7 +6,7 @@
       <div class="row row-cols-2 border-bottom">
         <div class="col">
           <img
-            src="https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_01.png"
+            src="{{house.photo1}}"
             alt="house 1 picture 1"
             class="houseBigImageLeft img-fluid"
           />
@@ -15,63 +15,63 @@
           <div class="row row-cols-3 gy-2 mt-1">
             <div class="col">
               <img
-                src="https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_01.png"
+                src="{{house.photo1}}"
                 alt="houseSmall1"
                 class="img-fluid"
               />
             </div>
             <div class="col">
               <img
-                src="https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_01.png"
+                src="{{house.photo2}}"
                 alt="houseSmall1"
                 class="img-fluid"
               />
             </div>
             <div class="col">
               <img
-                src="https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_01.png"
+                src="{{house.photo3}}"
                 alt="houseSmall1"
                 class="img-fluid"
               />
             </div>
             <div class="col">
               <img
-                src="https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_01.png"
+                src="{{house.photo4}}"
                 alt="houseSmall1"
                 class="img-fluid"
               />
             </div>
             <div class="col">
               <img
-                src="https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_01.png"
+                src="{{house.photo5}}"
                 alt="houseSmall1"
                 class="img-fluid"
               />
             </div>
             <div class="col">
               <img
-                src="https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_01.png"
+                src="{{house.photo6}}"
                 alt="houseSmall1"
                 class="img-fluid"
               />
             </div>
             <div class="col">
               <img
-                src="https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_01.png"
+                src="{{house.photo7}}"
                 alt="houseSmall1"
                 class="img-fluid"
               />
             </div>
             <div class="col">
               <img
-                src="https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_01.png"
+                src="{{house.photo8}}"
                 alt="houseSmall1"
                 class="img-fluid"
               />
             </div>
             <div class="col">
               <img
-                src="https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_01.png"
+                src="{{house.photo9}}"
                 alt="houseSmall1"
                 class="img-fluid"
               />
@@ -84,15 +84,15 @@
     <div class="container">
       <div class="row row-cols-2">
         <div class="col-8 mt-3">
-          <h1>Luxury Villa in Chaweng</h1>
+          <h1>{{house.title}}</h1>
           <span
-            ><i class="fa-solid fa-map-location"></i> Koh Samui
-            <i class="fa-regular fa-circle-dot"></i> 4 Rooms</span
+            ><i class="fa-solid fa-map-location"></i> {{house.location}}
+            <i class="fa-regular fa-circle-dot"></i> {{house.rooms}} Rooms</span
           >
           <div class="row mb-2">
             <div class="col-1">
               <img
-                src="https://randomuser.me/api/portraits/men/11.jpg"
+                src="{{user.avatar}}"
                 alt=""
                 class="rounded-circle img-fluid"
               />
@@ -100,26 +100,20 @@
             <div class="col-11 text-start">
               <div class="row-1">
                 <div class="col text-secondary">Hosted by</div>
-                <div class="col">Douglas</div>
+                <div class="col">{{user.name}}</div>
               </div>
             </div>
           </div>
           <p>
-            Stylish, tropical, luxurious, airy and absolute stunning view over
-            the bay of Chaweng Beach, this villa combines form and function,
-            enjoying magnificient views of Samui's small islands and the sea
-            beyond. With 520sqm of indoor/outdoorliving space with 7 ensuite
-            bedrooms, large living area, infinity pool, garden, air conditioned
-            gym, professional pool table, BBQ and Sala, this villa is perfect
-            for up to 14 adults with 260sqm (2798sqfeet) of living space and
-            260sqm of outdoor space.
+            {{house.description}}
           </p>
         </div>
         <div class="col-4 mt-3">
           <div class="card shadow float-end" style="width: 18rem;">
             <div class="card-body">
-              <h5 class="card-title">$350/night</h5>
+              <h5 class="card-title">${{house.price}}/night</h5>
               <span>0 reviews</span>
+							<!-- MODIFY ABOVE LATER TO SHOW NUMBER OF REVIEWS -->
               <form class="requestBooking" action="index.html" method="post">
                 <textarea
                   class="form-control"
@@ -145,6 +139,7 @@
         <!-- Leave a Review -->
         <div class="col-8">
           <h2>0 reviews</h2>
+					<!-- MODIFY ABOVE LATER TO SHOW NUMBER OF REVIEWS -->
           <form class="leaveReview" action="index.html" method="post">
             <label for="">Leave a review</label>
             <textarea
