@@ -83,139 +83,27 @@
     <div class="houses">
       <div class="container">
         <div class="row row-cols-4">
+					{{#each houses as |house|}}
           <div class="col">
             <div class="card my-3">
               <img
-                src="https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_01.png"
+                src="{{house.photos.[0]}}"
                 class="card-img-top"
                 alt="house 1 picture 1"
               />
               <div class="card-body">
-                <span>Koh Samui . 4 Rooms</span>
+                <span>{{house.location}} . {{house.rooms}} Rooms</span>
                 <h5 class="card-title">
-                  <a href="" class="stretched-link">Luxury Villa in Chaweng</a>
+                  <a href="/houses/{{house._id}}" class="stretched-link">{{house.title}}</a>
                 </h5>
                 <div class="row">
                   <div class="col">3 reviews</div>
-                  <div class="col text-end">$350/night</div>
+                  <div class="col text-end">${{house.price}}/night</div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="col">
-            <div class="card my-3">
-              <img
-                src="https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_01.png"
-                class="card-img-top"
-                alt="house 1 picture 1"
-              />
-              <div class="card-body">
-                <span>Koh Samui . 4 Rooms</span>
-                <h5 class="card-title">
-                  <a href="" class="stretched-link">Luxury Villa in Chaweng</a>
-                </h5>
-                <div class="row">
-                  <div class="col">3 reviews</div>
-                  <div class="col text-end">$350/night</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card my-3">
-              <img
-                src="https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_01.png"
-                class="card-img-top"
-                alt="house 1 picture 1"
-              />
-              <div class="card-body">
-                <span>Koh Samui . 4 Rooms</span>
-                <h5 class="card-title">
-                  <a href="" class="stretched-link">Luxury Villa in Chaweng</a>
-                </h5>
-                <div class="row">
-                  <div class="col">3 reviews</div>
-                  <div class="col text-end">$350/night</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card my-3">
-              <img
-                src="https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_01.png"
-                class="card-img-top"
-                alt="house 1 picture 1"
-              />
-              <div class="card-body">
-                <span>Koh Samui . 4 Rooms</span>
-                <h5 class="card-title">
-                  <a href="" class="stretched-link">Luxury Villa in Chaweng</a>
-                </h5>
-                <div class="row">
-                  <div class="col">3 reviews</div>
-                  <div class="col text-end">$350/night</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card my-3">
-              <img
-                src="https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_01.png"
-                class="card-img-top"
-                alt="house 1 picture 1"
-              />
-              <div class="card-body">
-                <span>Koh Samui . 4 Rooms</span>
-                <h5 class="card-title">
-                  <a href="" class="stretched-link">Luxury Villa in Chaweng</a>
-                </h5>
-                <div class="row">
-                  <div class="col">3 reviews</div>
-                  <div class="col text-end">$350/night</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card my-3">
-              <img
-                src="https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_01.png"
-                class="card-img-top"
-                alt="house 1 picture 1"
-              />
-              <div class="card-body">
-                <span>Koh Samui . 4 Rooms</span>
-                <h5 class="card-title">
-                  <a href="" class="stretched-link">Luxury Villa in Chaweng</a>
-                </h5>
-                <div class="row">
-                  <div class="col">3 reviews</div>
-                  <div class="col text-end">$350/night</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card my-3">
-              <img
-                src="https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_01.png"
-                class="card-img-top"
-                alt="house 1 picture 1"
-              />
-              <div class="card-body">
-                <span>Koh Samui . 4 Rooms</span>
-                <h5 class="card-title">
-                  <a href="" class="stretched-link">Luxury Villa in Chaweng</a>
-                </h5>
-                <div class="row">
-                  <div class="col">3 reviews</div>
-                  <div class="col text-end">$350/night</div>
-                </div>
-              </div>
-            </div>
-          </div>
+					{{/each}}
         </div>
       </div>
     </div>
