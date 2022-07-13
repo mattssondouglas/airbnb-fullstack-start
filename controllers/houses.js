@@ -33,7 +33,8 @@ router.get('/create', async (req, res, next) => {
 })
 // GET /:id
 router.get('/:id', async (req, res, next) => {
-  res.render('./houses/one', { user: req.user })
+  let house = await Houses.findById(req.params.id).populate('host')
+  res.render('houses/one', { user: req.user, house })
 })
 // GET /:id/edit
 router.get('/:id/edit', async (req, res, next) => {
