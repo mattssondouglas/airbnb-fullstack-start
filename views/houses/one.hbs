@@ -6,76 +6,22 @@
       <div class="row row-cols-2 border-bottom">
         <div class="col">
           <img
-            src="{{house.photo1}}"
+            src="{{house.photos.[0]}}"
             alt="house 1 picture 1"
             class="houseBigImageLeft img-fluid"
           />
         </div>
         <div class="col">
           <div class="row row-cols-3 gy-2 mt-1">
+						{{#each house.photos as |photo|}}
             <div class="col">
               <img
-                src="{{house.photo1}}"
+                src="{{photo}}"
                 alt="houseSmall1"
                 class="img-fluid"
               />
             </div>
-            <div class="col">
-              <img
-                src="{{house.photo2}}"
-                alt="houseSmall1"
-                class="img-fluid"
-              />
-            </div>
-            <div class="col">
-              <img
-                src="{{house.photo3}}"
-                alt="houseSmall1"
-                class="img-fluid"
-              />
-            </div>
-            <div class="col">
-              <img
-                src="{{house.photo4}}"
-                alt="houseSmall1"
-                class="img-fluid"
-              />
-            </div>
-            <div class="col">
-              <img
-                src="{{house.photo5}}"
-                alt="houseSmall1"
-                class="img-fluid"
-              />
-            </div>
-            <div class="col">
-              <img
-                src="{{house.photo6}}"
-                alt="houseSmall1"
-                class="img-fluid"
-              />
-            </div>
-            <div class="col">
-              <img
-                src="{{house.photo7}}"
-                alt="houseSmall1"
-                class="img-fluid"
-              />
-            </div>
-            <div class="col">
-              <img
-                src="{{house.photo8}}"
-                alt="houseSmall1"
-                class="img-fluid"
-              />
-            </div>
-            <div class="col">
-              <img
-                src="{{house.photo9}}"
-                alt="houseSmall1"
-                class="img-fluid"
-              />
-            </div>
+						{{/each}}
           </div>
         </div>
       </div>

@@ -13,6 +13,7 @@ router.get('/', async (req, res, next) => {
 router.post('/', async (req, res, next) => {
   try {
     if (req.isAuthenticated()) {
+      req.body.photos = req.body.photos.filter(photo => photo != '')
       req.body.host = req.user._id
       let house = await Houses.create(req.body)
       res.redirect(`/houses/${house._id}`)
@@ -34,6 +35,7 @@ router.get('/create', async (req, res, next) => {
 // GET /:id
 router.get('/:id', async (req, res, next) => {
   let house = await Houses.findById(req.params.id).populate('host')
+  console.log(house)
   res.render('houses/one', { user: req.user, house })
 })
 // GET /:id/edit
