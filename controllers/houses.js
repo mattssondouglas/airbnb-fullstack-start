@@ -11,14 +11,16 @@ router.get('/', async (req, res, next) => {
 })
 // POST /
 router.post('/', async (req, res, next) => {
-  if (req.isAuthenticated()) {
-    req.body.host = req.user._id
-    Houses.create(req.body)
-    // req.body det som var där förr, sen uppdatera objektet med en ny propert som är host. (req.body._id med bara nya propertyn)
-    // host: req.user._id,
-    res.redirect('/houses')
-  } else {
-    res.redirect('/auth/login')
+  try {
+    if (req.isAuthenticated()) {
+      req.body.host = req.user._id
+      let house = await Houses.create(req.body)
+      res.redirect(`/houses/${house._id}`)
+    } else {
+      res.redirect('/auth/login')
+    }
+  } catch (err) {
+    next(err)
   }
 })
 // GET /create
