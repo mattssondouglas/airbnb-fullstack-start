@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+const ObjectId = mongoose.Schema.Types.ObjectId
 
 module.exports = mongoose.model('houses', {
   description: {
@@ -14,7 +15,7 @@ module.exports = mongoose.model('houses', {
     type: String,
     required: true
   },
-  name: [String],
+  photos: [String],
   price: {
     type: Number,
     required: true

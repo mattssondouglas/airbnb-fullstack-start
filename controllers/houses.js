@@ -1,6 +1,7 @@
 // Import Packages
 const express = require('express')
 const router = express.Router()
+const Houses = require('../models/houses')
 
 //Requests
 // GET /
@@ -11,6 +12,11 @@ router.get('/', async (req, res, next) => {
 // POST /
 router.post('/', async (req, res, next) => {
   if (req.isAuthenticated()) {
+    req.body.host = req.user._id
+    Houses.create(req.body)
+    // req.body det som var där förr, sen uppdatera objektet med en ny propert som är host. (req.body._id med bara nya propertyn)
+    // host: req.user._id,
+    res.redirect('/houses')
   } else {
     res.redirect('/auth/login')
   }
