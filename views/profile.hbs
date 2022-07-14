@@ -17,23 +17,27 @@
               class="form-control mb-2"
               type="text"
               aria-label="default input example"
+							name="name"
+							value='{{user.name}}'
             />
             <small>Email</small>
             <label
               for="exampleFormControlInput1"
               class="form-label mb-2"
             ></label>
-            <input type="email" class="form-control mb-2" />
+            <input type="email" class="form-control mb-2" name="email" value="{{user.email}}"/>
             <small>Profile Picture</small>
             <img
-              src="https://randomuser.me/api/portraits/men/11.jpg"
-              alt=""
+              src="{{user.avatar}}"
+              alt="user"
               class="rounded-circle reviewavatar d-block mt-1 mb-2"
             />
             <input
               class="form-control mb-2"
               type="text"
               aria-label="default input example"
+							name="picture"
+							value="{{user.avatar}}"
             />
             <button class="btn btn-success">Save Changes</button>
           </form>
