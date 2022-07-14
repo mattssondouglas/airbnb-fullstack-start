@@ -7,7 +7,7 @@ module.exports = mongoose.model('reviews', {
     res: 'users',
     required: true
   },
-  name: {
+  date: {
     type: Date,
     required: true,
     default: Date.now

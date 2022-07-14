@@ -3,7 +3,7 @@
 	{{>nav}}
     <!-- Filterbar -->
     <div class="filters bg-light text-dark py-2">
-      <form class="" action="index.html" method="post">
+      <form class="" action="/houses" method="GET">
         <div class="container">
           <div class="row">
             <!-- Location -->
@@ -12,11 +12,11 @@
                 <span class="input-group-text"
                   ><i class="fa-solid fa-location-dot"></i
                 ></span>
-                <select class="form-select">
+                <select class="form-select" name="location">
                   <option selected>Any Location</option>
-                  <option value="1">Koh Phangan</option>
-                  <option value="2">Koh Samui</option>
-                  <option value="3">Bali</option>
+                  <option value="Koh Phangan">Koh Phangan</option>
+                  <option value="Koh Samui">Koh Samui</option>
+                  <option value="Bali">Bali</option>
                 </select>
               </div>
             </div>
@@ -26,7 +26,7 @@
                 <span class="input-group-text"
                   ><i class="fa-solid fa-house-chimney"></i
                 ></span>
-                <select class="form-select">
+                <select class="form-select" name='rooms'>
                   <option selected>Any rooms</option>
                   <option value="1">1 Room</option>
                   <option value="2">2 Rooms</option>
@@ -46,6 +46,7 @@
                   type="number"
                   class="form-control"
                   placeholder="max price"
+									name='price'
                 />
               </div>
             </div>
@@ -68,6 +69,7 @@
                   type="text"
                   class="form-control"
                   placeholder="House name..."
+									name='title'
                 />
               </div>
             </div>
