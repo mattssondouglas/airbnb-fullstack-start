@@ -6,7 +6,34 @@ const Houses = require('../models/houses')
 //Requests
 // GET /
 router.get('/', async (req, res, next) => {
-  let houses = await Houses.find({})
+  // EMPTY QUERY  TO MODIFY
+  let q = {}
+  // LOCATION FILTER
+  if (req.query.location != '') {
+    q.location = req.query.location
+  }
+  // ROOM FILTER
+  if (req.query.rooms != '') {
+    q.rooms = req.query.rooms
+  }
+  // PRICE FILTER
+  if (req.query.price != '') {
+    q.price = {
+      $lt: req.query.price
+    }
+  }
+  // TITLE FILTER
+  if (req.query.title != '') {
+    q.title = { $regex: req.query.title, $options: 'i' }
+  }
+  // SORTING SOLUTION STARTING WITH EMPTY ARRAY
+  let houses = []
+  if (req.query.psort != 0) {
+    houses = await Houses.find(q).sort('-price')
+  } else {
+    houses = await Houses.find(q).sort('price')
+  }
+  // FINAL RENDER
   res.render('./houses/list', { user: req.user, houses })
 })
 // POST /
