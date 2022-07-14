@@ -25,6 +25,7 @@ router.post('/login', async (req, res, next) => {
         if (err) {
           throw err
         } else {
+          console.log('ok')
           res.redirect('/houses')
         }
       })

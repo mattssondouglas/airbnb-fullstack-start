@@ -14,12 +14,23 @@ router.get('/', async (req, res, next) => {
 })
 // PATCH /
 router.patch('/', async (req, res, next) => {
-  console.log(req.body)
-  if (req.isAuthenticated()) {
-    let user = await Users.findByIdAndUpdate(req.user._id, req.body)
-    res.redirect('/profile')
-  } else {
-    res.redirect('/auth/login')
+  try {
+    if (req.isAuthenticated()) {
+      let user = await Users.findByIdAndUpdate(req.user._id, req.body, {
+        new: true
+      })
+      req.login(user, err => {
+        if (err) {
+          throw err
+        } else {
+          res.redirect('/profile')
+        }
+      })
+    } else {
+      res.redirect('/auth/login')
+    }
+  } catch (err) {
+    next(err)
   }
 })
 // Export module

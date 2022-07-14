@@ -9,21 +9,23 @@ router.get('/', async (req, res, next) => {
   // EMPTY QUERY  TO MODIFY
   let q = {}
   // LOCATION FILTER
-  if (req.query.location != '') {
+  if (req.query.location && req.query.location != '') {
     q.location = req.query.location
   }
   // ROOM FILTER
-  if (req.query.rooms != '') {
+  if (req.query.rooms && req.query.rooms != '') {
     q.rooms = req.query.rooms
   }
   // PRICE FILTER
-  if (req.query.price != '') {
+  if (req.query.price && req.query.price != '') {
     q.price = {
       $lt: req.query.price
     }
   }
+  console.log(q)
   // TITLE FILTER
-  if (req.query.title != '') {
+  console.log('title', req.query.title)
+  if (req.query.title && req.query.title != '') {
     q.title = { $regex: req.query.title, $options: 'i' }
   }
   // SORTING SOLUTION STARTING WITH EMPTY ARRAY
