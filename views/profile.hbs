@@ -51,129 +51,48 @@
           <button type="button" class="btn btn-success">List a House</button>
 				</a>
           <div class="">
-            <div class="alert alert-light" role="alert">
-              You don't have any listings.
+						{{#if houses}}
+
+            <div class="row row-cols-1">
+              <div class="col p-2">
+								{{#each houses as |house|}}
+                <div class="card">
+                  <div class="card-body">
+                    <div class="row row-cols-2">
+                      <div class="col-4">
+                        <img
+                          class="img-fluid"
+                          src="{{house.photos.[0]}}"
+                          alt="listing photo 1"
+                        />
+                      </div>
+                      <div class="col-8">
+                        <h1>{{house.title}}</h1>
+                        <span
+                          ><i class="fa-solid fa-map-location"></i> {{house.location}}
+                          <i class="fa-regular fa-circle-dot"></i> {{house.rooms}} Rooms</span
+                        >
+                        <div class="row">
+                        </div>
+                        <p>
+                          {{house.description}}
+                        </p>
+                        <div class="col">
+													<a href="/houses/{{house._id}}/edit"	class="btn btn-outline-secondary">Edit</a>
+													<a href="/houses/{{house._id}}" class="btn btn-outline-primary">View</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+								{{/each}}
+              </div>
             </div>
-            <!-- <div class="row row-cols-1">
-              <div class="col p-2">
-                <div class="card">
-                  <div class="card-body">
-                    <div class="row row-cols-2">
-                      <div class="col-4">
-                        <img
-                          class="img-fluid"
-                          src="https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_01.png
-
-"
-                          alt="listing photo 1"
-                        />
-                      </div>
-                      <div class="col-8">
-                        <h1>Luxury Villa in Chaweng</h1>
-                        <span
-                          ><i class="fa-solid fa-map-location"></i> Koh Samui
-                          <i class="fa-regular fa-circle-dot"></i> 4 Rooms</span
-                        >
-                        <div class="row">
-                          <div class="col-1 text-end">
-                            <img
-                              src="https://randomuser.me/api/portraits/men/11.jpg"
-                              class="rounded-circle avatarimg"
-                              alt="avatardescr"
-                            />
-                          </div>
-                          <div class="col-11">
-                            <small>Hosted by Douglas</small>
-                          </div>
-                        </div>
-                        <p>
-                          Stylish, tropical, luxurious, airy and absolute
-                          stunning view over the bay of Chaweng Beach, this
-                          villa combines form and function, enjoying
-                          magnificient views of Samui's small islands and the
-                          sea beyond. With 520sqm of indoor/outdoorliving space
-                          with 7 ensuite bedrooms, large living area, infinity
-                          pool, garden, air conditioned gym, professional pool
-                          table, BBQ and Sala, this villa is perfect for up to
-                          14 adults with 260sqm (2798sqfeet) of living space and
-                          260sqm of outdoor space.
-                        </p>
-                        <div class="col">
-                          <button
-                            type="button"
-                            class="btn btn-outline-secondary"
-                          >
-                            Edit
-                          </button>
-                          <button type="button" class="btn btn-outline-success">
-                            View
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col p-2">
-                <div class="card">
-                  <div class="card-body">
-                    <div class="row row-cols-2">
-                      <div class="col-4">
-                        <img
-                          class="img-fluid"
-                          src="https://res.cloudinary.com/dsko6ntfj/image/upload/v1640295026/portal/web%20development%20beginners/05%20Project%20Airbnb/house%2001/house_01_01.png
-
-"
-                          alt="listing photo 1"
-                        />
-                      </div>
-                      <div class="col-8">
-                        <h1>Luxury Villa in Chaweng</h1>
-                        <span
-                          ><i class="fa-solid fa-map-location"></i> Koh Samui
-                          <i class="fa-regular fa-circle-dot"></i> 4 Rooms</span
-                        >
-                        <div class="row">
-                          <div class="col-1 text-end">
-                            <img
-                              src="https://randomuser.me/api/portraits/men/11.jpg"
-                              class="rounded-circle avatarimg"
-                              alt="avatardescr"
-                            />
-                          </div>
-                          <div class="col-11">
-                            <small>Hosted by Douglas</small>
-                          </div>
-                        </div>
-                        <p>
-                          Stylish, tropical, luxurious, airy and absolute
-                          stunning view over the bay of Chaweng Beach, this
-                          villa combines form and function, enjoying
-                          magnificient views of Samui's small islands and the
-                          sea beyond. With 520sqm of indoor/outdoorliving space
-                          with 7 ensuite bedrooms, large living area, infinity
-                          pool, garden, air conditioned gym, professional pool
-                          table, BBQ and Sala, this villa is perfect for up to
-                          14 adults with 260sqm (2798sqfeet) of living space and
-                          260sqm of outdoor space.
-                        </p>
-                        <div class="col">
-                          <button
-                            type="button"
-                            class="btn btn-outline-secondary"
-                          >
-                            Edit
-                          </button>
-                          <button type="button" class="btn btn-outline-success">
-                            View
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div> -->
+						{{else}}
+						<div class="alert alert-light" role="alert">
+						You don't have any listings.
+					</div>
+						{{/if}}
           </div>
         </div>
       </div>
