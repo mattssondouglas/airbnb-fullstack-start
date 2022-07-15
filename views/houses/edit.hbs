@@ -4,37 +4,37 @@
 
     <div class="container">
       <!-- Start> Form -->
-      <form class="" action="index.html" method="post">
+      <form class="" action="/houses/{{house._id}}?_method=PATCH" method="POST">
         <h5>List a house</h5>
         <label class="form-label">Short Title</label>
-        <input type="text" class="form-control" />
+        <input type="text" class="form-control" value="{{house.title}}"/>
         <label class="form-label">Description</label>
-        <textarea class="form-control" rows="5"></textarea>
+        <textarea class="form-control" rows="5" value="{{house.description}}"></textarea>
         <label class="form-label">Number of Rooms</label>
-        <input type="number" class="form-control" />
+        <input type="number" class="form-control" value="{{house.rooms}}"/>
         <label class="form-label">Location</label>
-        <select class="form-select">
-          <option value="1" selected>Koh Phangan</option>
-          <option value="2">Koh Samui</option>
-          <option value="3">Bali</option>
+        <select class="form-select" value="{{house.location}}">
+          <option value="Koh Phangan" selected>Koh Phangan</option>
+          <option value="Koh Samui">Koh Samui</option>
+          <option value="Bali">Bali</option>
         </select>
         <label class="form-label">Price (per night)</label>
         <div class="input-group">
           <span class="input-group-text"
             ><i class="fa-solid fa-dollar-sign"></i
           ></span>
-          <input type="number" class="form-control" />
+          <input type="number" class="form-control"  value="{{house.price}}"/>
         </div>
         <label class="form-label">Add Photos (up to 9)</label>
-        <input type="text" class="form-control" placeholder="http://..." />
-        <input type="text" class="form-control" placeholder="http://..." />
-        <input type="text" class="form-control" placeholder="http://..." />
-        <input type="text" class="form-control" placeholder="http://..." />
-        <input type="text" class="form-control" placeholder="http://..." />
-        <input type="text" class="form-control" placeholder="http://..." />
-        <input type="text" class="form-control" placeholder="http://..." />
-        <input type="text" class="form-control" placeholder="http://..." />
-        <input type="text" class="form-control" placeholder="http://..." />
+        <input type="text" class="form-control" placeholder="http://..." value="{{house.photos.[0]}}"/>
+        <input type="text" class="form-control" placeholder="http://..." value="{{house.photos.[1]}}"/>
+        <input type="text" class="form-control" placeholder="http://..." value="{{house.photos.[3]}}"/>
+        <input type="text" class="form-control" placeholder="http://..." value="{{house.photos.[4]}}"/>
+        <input type="text" class="form-control" placeholder="http://..." value="{{house.photos.[5]}}"/>
+        <input type="text" class="form-control" placeholder="http://..." value="{{house.photos.[6]}}"/>
+        <input type="text" class="form-control" placeholder="http://..." value="{{house.photos.[7]}}"/>
+        <input type="text" class="form-control" placeholder="http://..." value="{{house.photos.[8]}}"/>
+        <input type="text" class="form-control" placeholder="http://..." value="{{house.photos.[9]}}"/>
         <button class="btn btn-success mt-2">Submit</button>
       </form>
       <!--END FORM-->

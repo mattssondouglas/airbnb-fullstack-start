@@ -8,17 +8,18 @@
           <img
             src="{{house.photos.[0]}}"
             alt="house 1 picture 1"
-            class="houseBigImageLeft img-fluid"
+            class="img-fluid houseBigImageLeft"
           />
         </div>
         <div class="col">
           <div class="row row-cols-3 gy-2 mt-1">
 						{{#each house.photos as |photo|}}
-            <div class="col">
+            <div class="col ">
               <img
                 src="{{photo}}"
                 alt="houseSmall1"
                 class="img-fluid"
+								onclick="selectBigImage(this)"
               />
             </div>
 						{{/each}}

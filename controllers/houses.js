@@ -70,7 +70,8 @@ router.get('/:id', async (req, res, next) => {
 // GET /:id/edit
 router.get('/:id/edit', async (req, res, next) => {
   if (req.isAuthenticated()) {
-    res.render('./houses/edit', { user: req.user })
+    let house = await Houses.findById(req.params.id)
+    res.render('./houses/edit', { user: req.user, house })
   } else {
     res.redirect('/auth/login')
   }
@@ -78,6 +79,8 @@ router.get('/:id/edit', async (req, res, next) => {
 // PATCH /:id
 router.patch('/:id', async (req, res, next) => {
   if (req.isAuthenticated()) {
+    let house = await Houses.findByIdAndUpdate(req.params.id, req.body)
+    res.redirect(`/houses/${req.params.id}`)
   } else {
     res.redirect('/auth/login')
   }
