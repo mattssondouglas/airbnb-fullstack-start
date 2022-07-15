@@ -2,6 +2,8 @@
 const express = require('express')
 const router = express.Router()
 const Houses = require('../models/houses')
+const Bookings = require('../models/bookings')
+const Users = require('../models/users')
 
 //Requests
 // GET /
@@ -64,8 +66,15 @@ router.get('/create', async (req, res, next) => {
 // GET /:id
 router.get('/:id', async (req, res, next) => {
   let house = await Houses.findById(req.params.id).populate('host')
-  console.log(house)
-  res.render('houses/one', { user: req.user, house })
+  let booking = await Bookings.findOne({
+    house: req.params.id,
+    author: req.user._id
+  })
+  if (booking) {
+    res.render('houses/one', { user: req.user, house, booking })
+  } else {
+    res.render('houses/one', { user: req.user, house })
+  }
 })
 // GET /:id/edit
 router.get('/:id/edit', async (req, res, next) => {

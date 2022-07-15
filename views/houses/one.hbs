@@ -56,11 +56,24 @@
           </p>
         </div>
         <div class="col-4 mt-3">
+					{{#if booking}}
+					<div class="card shadow float-end reqcard" style="width: 18rem;">
+						<div class="card-body">
+							<h5 class="card-title">$350/night</h5>
+							<span>0 reviews</span>
+							<div class="alert alert-success" role="alert">
+								Thank you for your enquiry!
+								<span>Sent on 02 Jan 2022 01:01</span>
+							</div>
+						</div>
+					</div>
+					{{else}}
           <div class="card shadow float-end" style="width: 18rem;">
             <div class="card-body">
               <h5 class="card-title">${{house.price}}/night</h5>
               <span>0 reviews</span>
 							<!-- MODIFY ABOVE LATER TO SHOW NUMBER OF REVIEWS -->
+
               <form class="requestBooking" action="/bookings" method="POST">
 								<input type="hidden" name="house" value="{{house._id}}"/>
                 <textarea
@@ -74,17 +87,7 @@
               </form>
             </div>
           </div>
-          <!-- SUCCESS ALERT, ACTIVATE AFTER REQUESTBOOKING IS SENT
-					<div class="card shadow float-end reqcard" style="width: 18rem;">
-            <div class="card-body">
-              <h5 class="card-title">$350/night</h5>
-              <span>0 reviews</span>
-              <div class="alert alert-success" role="alert">
-                Thank you for your enquiry!
-                <span>Sent on 02 Jan 2022 01:01</span>
-              </div>
-            </div>
-          </div> -->
+					{{/if}}
         </div>
         <!-- Leave a Review -->
         <div class="col-8">
