@@ -62,13 +62,15 @@
               <span>0 reviews</span>
 							<!-- MODIFY ABOVE LATER TO SHOW NUMBER OF REVIEWS -->
               <form class="requestBooking" action="/bookings" method="POST">
-								<span type="hidden" name="house">{{house._id}}</span>
+								<input type="hidden" name="house" value="{{house._id}}"/>
                 <textarea
                   class="form-control"
                   rows="5"
                   placeholder="Send the host a message..."
+                  name="description"
+
                 ></textarea>
-                <a href="#" class="btn btn-success mt-3">Request Booking</a>
+                <button class="btn btn-success mt-3">Request Booking</button>
               </form>
             </div>
           </div>
