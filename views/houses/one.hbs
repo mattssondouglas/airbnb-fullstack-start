@@ -61,7 +61,8 @@
               <h5 class="card-title">${{house.price}}/night</h5>
               <span>0 reviews</span>
 							<!-- MODIFY ABOVE LATER TO SHOW NUMBER OF REVIEWS -->
-              <form class="requestBooking" action="index.html" method="post">
+              <form class="requestBooking" action="/bookings" method="POST">
+								<span type="hidden" name="house">{{house._id}}</span>
                 <textarea
                   class="form-control"
                   rows="5"
