@@ -4,7 +4,7 @@ const ObjectId = mongoose.Schema.Types.ObjectId
 module.exports = mongoose.model('reviews', {
   author: {
     type: ObjectId,
-    res: 'users',
+    ref: 'users',
     required: true
   },
   date: {
@@ -18,7 +18,7 @@ module.exports = mongoose.model('reviews', {
   },
   house: {
     type: ObjectId,
-    res: 'houses',
+    ref: 'houses',
     required: true
   }
   // COMMENTING OUT RATING FOR NOW, COME BACK LATER. PORTAL 2/2 5.MODELS

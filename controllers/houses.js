@@ -9,7 +9,7 @@ const Reviews = require('../models/reviews')
 //Requests
 // GET /
 router.get('/', async (req, res, next) => {
-  // EMPTY QUERY  TO MODIFY
+  // EMPTY QUERY TO MODIFY
   let q = {}
   // LOCATION FILTER
   if (req.query.location && req.query.location != '') {
@@ -69,7 +69,9 @@ router.get('/:id', async (req, res, next) => {
   let house = await Houses.findById(req.params.id).populate('host')
   let reviews = await Reviews.find({
     house: house
-  })
+  }).populate('author')
+  console.log(reviews)
+  // let revUser = await
   let booking = await Bookings.findOne({
     house: req.params.id,
     author: req.user._id
