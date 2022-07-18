@@ -91,7 +91,7 @@
         </div>
         <!-- Leave a Review -->
         <div class="col-8">
-          <h2>0 reviews</h2>
+          <h2>{{reviews.length}} reviews</h2>
 					<!-- MODIFY ABOVE LATER TO SHOW NUMBER OF REVIEWS -->
           <form class="leaveReview" action="/reviews" method="POST">
 						<input type="hidden" name="house" value="{{house._id}}">
@@ -117,11 +117,13 @@
       <!-- Review Cards -->
       <div class="reviews mt-4">
         <!-- Review Card 1 -->
+				{{#if reviews.length}}
+				{{#each reviews as |review|}}
         <div class="card w-50 mb-3">
           <div class="row">
             <div class="col-2">
               <img
-                src="https://randomuser.me/api/portraits/men/11.jpg"
+                src="{{review.author.avatar}}"
                 alt="avatar"
                 class="reviewavatar rounded-circle m-3"
               />
@@ -129,7 +131,7 @@
             <div class="col-10">
               <div class="row">
                 <div class="col" class="detailsReview">
-                  <span class="text-secondary">02 Jan 2022 - 01:01</span>
+                  <span class="text-secondary">{{review.date}}</span>
                 </div>
                 <div class="col text-end mx-3">
                   <i class="fa-solid fa-thumbs-up"></i>
@@ -137,49 +139,17 @@
               </div>
               <div class="row">
                 <div class="col">
-                  <h5>Peter Lewis</h5>
+                  <h5>{{review.author}}</h5>
                   <p>
-                    This place is fantastic! The views are breathtaking and it's
-                    just a short walk to all the shops. My family and I had an
-                    amazing experience.
+                    {{review.description}}
                   </p>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <!-- Review Card 2 -->
-        <div class="card w-50 mb-3">
-          <div class="row">
-            <div class="col-2">
-              <img
-                src="https://randomuser.me/api/portraits/men/11.jpg"
-                alt="avatar"
-                class="reviewavatar rounded-circle m-3"
-              />
-            </div>
-            <div class="col-10">
-              <div class="row">
-                <div class="col" class="detailsReview">
-                  <span class="text-secondary">02 Jan 2022 - 01:01</span>
-                </div>
-                <div class="col text-end mx-3">
-                  <i class="fa-solid fa-thumbs-up"></i>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col">
-                  <h5>Peter Lewis</h5>
-                  <p>
-                    This place is fantastic! The views are breathtaking and it's
-                    just a short walk to all the shops. My family and I had an
-                    amazing experience.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+				{{/each}}
+				{{/if}}
       </div>
     </div>
   </body>

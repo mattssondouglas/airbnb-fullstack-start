@@ -4,6 +4,7 @@ const router = express.Router()
 const Houses = require('../models/houses')
 const Bookings = require('../models/bookings')
 const Users = require('../models/users')
+const Reviews = require('../models/reviews')
 
 //Requests
 // GET /
@@ -66,14 +67,17 @@ router.get('/create', async (req, res, next) => {
 // GET /:id
 router.get('/:id', async (req, res, next) => {
   let house = await Houses.findById(req.params.id).populate('host')
+  let reviews = await Reviews.find({
+    house: house
+  })
   let booking = await Bookings.findOne({
     house: req.params.id,
     author: req.user._id
   })
   if (booking) {
-    res.render('houses/one', { user: req.user, house, booking })
+    res.render('houses/one', { user: req.user, house, booking, reviews })
   } else {
-    res.render('houses/one', { user: req.user, house })
+    res.render('houses/one', { user: req.user, house, reviews })
   }
 })
 // GET /:id/edit
