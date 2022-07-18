@@ -93,12 +93,14 @@
         <div class="col-8">
           <h2>0 reviews</h2>
 					<!-- MODIFY ABOVE LATER TO SHOW NUMBER OF REVIEWS -->
-          <form class="leaveReview" action="index.html" method="post">
+          <form class="leaveReview" action="/reviews" method="POST">
+						<input type="hidden" name="house" value="{{house._id}}">
             <label for="">Leave a review</label>
             <textarea
               class="form-control"
               rows="5"
               aria-label="With textarea"
+              name="description"
             ></textarea>
             <button type="button" class="btn btn-outline-success mt-2">
               <i class="fa-regular fa-thumbs-up"></i>
@@ -106,8 +108,8 @@
             <button type="button" class="btn btn-outline-danger mt-2">
               <i class="fa-regular fa-thumbs-down"></i>
             </button>
-            <a href="#" class="btn btn-success d-block reviewsubmit mt-2"
-              >Submit</a
+            <button class="btn btn-success d-block reviewsubmit mt-2"
+              >Submit</button
             >
           </form>
         </div>
