@@ -45,12 +45,12 @@ router.post('/signup', async (req, res, next) => {
   try {
     console.log(req.body)
     let user = await Users.create(req.body)
-    let foundUser = await Users.findOne({
-      email: req.body.email
-    })
-    if (foundUser) {
-      throw new Error('User with this email already exists')
-    }
+    // let foundUser = await Users.findOne({
+    //   email: req.body.email
+    // })
+    // if (foundUser) {
+    //   throw new Error('User with this email already exists')
+    // }
     req.login(user, err => {
       if (err) {
         console.log(err)
